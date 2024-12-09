@@ -183,8 +183,15 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Moudels Service Providers...
+         */
+
+         \PYB\Home\Providers\HomeServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
+
 
         /*
          * Application Service Providers...
