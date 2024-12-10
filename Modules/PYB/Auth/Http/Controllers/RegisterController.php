@@ -3,6 +3,8 @@
 namespace PYB\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use PYB\Auth\Services\RegisterService;
+use PYB\Auth\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -11,8 +13,13 @@ class RegisterController extends Controller
         return view('Auth::register');
     }
 
-    public function register()
+    public function register(RegisterRequest $request, RegisterService $registerService)
     {
-        // Store user data in the database
+        $user = $registerService->generateUser($request);
+
+        auth()->loginUsingId($user->id);
+
+        return redirect()->route('home.index');
     }
+
 }
