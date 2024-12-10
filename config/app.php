@@ -186,7 +186,10 @@ return [
          * Moudels Service Providers...
          */
 
-         \PYB\Home\Providers\HomeServiceProvider::class,
+        PYB\Home\Providers\HomeServiceProvider::class,
+        PYB\User\Providers\UserServiceProvider::class,
+        PYB\Auth\Providers\AuthServiceProvider::class,
+        /*
 
         /*
          * Package Service Providers...
