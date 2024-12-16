@@ -3,6 +3,8 @@
 namespace PYB\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use PYB\Auth\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -11,8 +13,12 @@ class LoginController extends Controller
         return view('Auth::login');
     }
 
-    public function register()
+    public function login(LoginRequest $request)
     {
-        // Store user data in the database
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return to_route('home.index');
+        }
+
+        return redirect()->back()->withErrors(['data_problem' => 'اطلاعات درست نبوده!']);
     }
 }
