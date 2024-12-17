@@ -4,6 +4,7 @@ namespace PYB\Auth\Services;
 
 use PYB\User\Models\User;
 
+
 class RegisterService
 {
     public function generateUser($request)

@@ -19,9 +19,9 @@ class RegisterController extends Controller
         $user = $registerService->generateUser($request);
 
         auth()->loginUsingId($user->id);
-        event( new Registered($user));
+
+        event(new Registered($user));
 
         return redirect()->route('home.index');
     }
 }
-

@@ -22,3 +22,4 @@ class LoginController extends Controller
         return redirect()->back()->withErrors(['data_problem' => 'اطلاعات درست نبوده!']);
     }
 }
+
