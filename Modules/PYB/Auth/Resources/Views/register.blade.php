@@ -26,7 +26,6 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        
                         <div class="form-group">
                             <label for="email">ایمیل</label>
                             <input class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"

@@ -43,7 +43,6 @@
                     </form>
                 </div>
             </div>
-            r
             <div class="row mt-3">
                 <div class="col-12 text-center">
                     <p class="text-muted">حساب کاربری ندارید؟
