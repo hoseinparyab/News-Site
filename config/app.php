@@ -189,10 +189,12 @@ return [
         PYB\Home\Providers\HomeServiceProvider::class,
         PYB\User\Providers\UserServiceProvider::class,
         PYB\Auth\Providers\AuthServiceProvider::class,
+        PYB\Panel\Providers\PanelServiceProvider::class,
+
         /*
 
         /*
-         * Package Service Providers...
+         * Package Service Providers...[]
          */
 
 

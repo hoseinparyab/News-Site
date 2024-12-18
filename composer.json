@@ -30,8 +30,8 @@
             "Database\\Seeders\\": "database/seeders/",
             "PYB\\Home\\": "Modules/PYB/Home",
             "PYB\\User\\": "Modules/PYB/User",
-            "PYB\\Auth\\": "Modules/PYB/Auth"
-
+            "PYB\\Auth\\": "Modules/PYB/Auth",
+            "PYB\\Panel\\": "Modules/PYB/Panel/"
         }
     },
     "autoload-dev": {
