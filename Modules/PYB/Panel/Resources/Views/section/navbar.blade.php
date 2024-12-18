@@ -105,7 +105,7 @@
                     <span>قفل کردن صفحه</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('logout') }}" class="dropdown-item notify-item">
+                <a href="{{ route('auth.logout') }}" class="dropdown-item notify-item">
                     <i class="fe-log-out"></i>
                     <span>خروج</span>
                 </a>
