@@ -11,7 +11,9 @@ class CategoryServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->loadViewsFrom(__DIR__ . '/../Resources/Views/', 'Category');
+        $this->loadJsonTranslationsFrom(__DIR__ . '/../Resources/Lang');
         Route::middleware('web')->namespace('PYB\Category\Http\Controllers')->group(__DIR__ . '/../Routes/category_routes.php');
+
     }
 
     public function boot()
