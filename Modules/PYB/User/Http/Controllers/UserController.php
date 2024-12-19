@@ -35,7 +35,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $this->service->store($request);
-        return redirect()->route('user.index');
+        return redirect()->route('users.index');
     }
 
     public function edit($id)
@@ -47,12 +47,12 @@ class UserController extends Controller
     public function update(UserUpdateRequest $request, $id)
     {
         $this->service->update($request, $id);
-        return redirect()->route('user.index');
+        return redirect()->route('users.index');
     }
 
     public function destroy($id)
     {
         $this->repo->delete($id);
-        return redirect()->route('user.index');
+        return redirect()->route('users.index')->with(['success_delete' => 'کاربر حذف شد.']);
     }
 }
