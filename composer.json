@@ -32,7 +32,8 @@
             "PYB\\Home\\": "Modules/PYB/Home",
             "PYB\\User\\": "Modules/PYB/User",
             "PYB\\Auth\\": "Modules/PYB/Auth",
-            "PYB\\Panel\\": "Modules/PYB/Panel/"
+            "PYB\\Panel\\": "Modules/PYB/Panel/",
+            "PYB\\Category\\": "Modules/PYB/Category/"
         }
     },
     "autoload-dev": {

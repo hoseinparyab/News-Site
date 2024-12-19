@@ -190,6 +190,8 @@ return [
         PYB\User\Providers\UserServiceProvider::class,
         PYB\Auth\Providers\AuthServiceProvider::class,
         PYB\Panel\Providers\PanelServiceProvider::class,
+        PYB\Category\Providers\CategoryServiceProvider::class,
+
 
         /*
 

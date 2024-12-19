@@ -2,11 +2,12 @@
 
 namespace PYB\User\Models;
 
+use Laravel\Sanctum\HasApiTokens;
+use PYB\Category\Models\Category;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -31,5 +32,11 @@ class User extends Authenticatable implements MustVerifyEmail
         if ($this->email_verified_at) return 'success';
 
         return 'danger';
+    }
+
+    // TODO: Relations
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
     }
 }
