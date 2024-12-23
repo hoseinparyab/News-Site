@@ -2,8 +2,10 @@
 
 namespace PYB\User\Services;
 
-use Illuminate\Support\Facades\Hash;
 use PYB\User\Models\User;
+use PYB\Role\Repositories\RoleRepo;
+use Illuminate\Support\Facades\Hash;
+use PYB\User\Http\Requests\AddRoleRequest;
 
 class UserService
 {
@@ -25,4 +27,14 @@ class UserService
             'password' => bcrypt($request->password),
         ]);
     }
+    public function addRole($role, $user)
+    {
+        return $user->assignRole($role);
+    }
+
+    public function deleteRole($user, $role)
+    {
+        return $user->removeRole($role);
+    }
+
 }

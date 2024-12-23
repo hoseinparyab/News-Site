@@ -191,6 +191,8 @@ return [
         PYB\Auth\Providers\AuthServiceProvider::class,
         PYB\Panel\Providers\PanelServiceProvider::class,
         PYB\Category\Providers\CategoryServiceProvider::class,
+        PYB\Role\Providers\RoleServiceProvider::class,
+
 
 
         /*
@@ -198,6 +200,7 @@ return [
         /*
          * Package Service Providers...[]
          */
+        Spatie\Permission\PermissionServiceProvider::class,
 
 
         /*
@@ -222,8 +225,8 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+    'aliases' => Facade::defaultAliases()->merge(
+        ['Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];

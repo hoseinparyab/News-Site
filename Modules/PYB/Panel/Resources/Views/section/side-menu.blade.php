@@ -1,4 +1,4 @@
-  <div id="sidebar-menu">
+<div id="sidebar-menu">
     <ul class="metismenu" id="side-menu">
         <li class="menu-title">منو</li>
         @foreach (config('panelConfig.menus') as $menu)

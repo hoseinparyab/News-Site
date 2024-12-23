@@ -2,8 +2,11 @@
 
 namespace PYB\Category\Providers;
 
+use PYB\Category\Models\Category;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use PYB\Category\Policies\CategoryPolicy;
 
 class CategoryServiceProvider extends ServiceProvider
 {
@@ -13,6 +16,8 @@ class CategoryServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../Resources/Views/', 'Category');
         $this->loadJsonTranslationsFrom(__DIR__ . '/../Resources/Lang');
         Route::middleware('web')->namespace('PYB\Category\Http\Controllers')->group(__DIR__ . '/../Routes/category_routes.php');
+        Gate::policy(Category::class, CategoryPolicy::class);
+
 
     }
 
