@@ -192,6 +192,8 @@ return [
         PYB\Panel\Providers\PanelServiceProvider::class,
         PYB\Category\Providers\CategoryServiceProvider::class,
         PYB\Role\Providers\RoleServiceProvider::class,
+        PYB\Role\Providers\RoleServiceProvider::class,
+        PYB\Article\Providers\ArticleServiceProvider::class,
 
 
 
