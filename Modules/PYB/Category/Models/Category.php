@@ -2,9 +2,10 @@
 
 namespace PYB\Category\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use PYB\User\Models\User;
+use PYB\Article\Models\Article;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -39,5 +40,10 @@ class Category extends Model
         if (is_null($this->parent_id)) return 'ندارد';
 
         return $this->parentCategory->title;
+    }
+
+    public function article()
+    {
+        return $this->hasMany(Article::class);
     }
 }

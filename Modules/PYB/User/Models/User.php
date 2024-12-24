@@ -2,6 +2,7 @@
 
 namespace PYB\User\Models;
 
+use PYB\Article\Models\Article;
 use Laravel\Sanctum\HasApiTokens;
 use PYB\Category\Models\Category;
 use Overtrue\LaravelLike\Traits\Liker;
@@ -40,5 +41,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function categories()
     {
         return $this->hasMany(Category::class);
+    }
+    public function article()
+    {
+        return $this->hasMany(Article::class,);
     }
 }

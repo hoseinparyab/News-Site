@@ -2,27 +2,35 @@
 
 namespace PYB\Article\Requests;
 
+use Illuminate\Validation\Rule;
+use PYB\Article\Models\Article;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ArticleRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return auth()->check() === true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
-        return [
-            //
+        $rules = [
+            'category_id' => 'required|exists:categories,id',
+            'title' => 'required|string|min:3|max:190|unique:articles,title',
+            'time_to_read' => 'required|numeric',
+            'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'score' => 'required|numeric|in:1,2,3,4,5,6,7,8,9,10',
+            'status' => ['required', Rule::in(Article::$statuses)],
+            'type' => ['required', Rule::in(Article::$types)],
+            'body' => 'required|string|min:3',
         ];
+
+        if (request()->method === 'PATCH') {
+            $rules['title'] = 'required|string|min:3|max:190|unique:articles,title,' . request()->id;
+            $rules['image'] = 'nullable|mimes:jpg,jpeg,png|max:2048';
+        }
+
+        return $rules;
     }
 }
