@@ -22,8 +22,6 @@ class CategoryController extends Controller
     public function index()
     {
         $this->authorize('index', Category::class);
-
-        return view('Panel::index');
         $categories = $this->repo->index()->paginate(10);
         return view('Category::index', compact('categories'));
     }
