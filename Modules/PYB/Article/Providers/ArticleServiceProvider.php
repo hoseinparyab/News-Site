@@ -25,7 +25,7 @@ class ArticleServiceProvider extends ServiceProvider
         config()->set('panelConfig.menus.articles', [
             'url'   => route('articles.index'),
             'title' => 'مقالات',
-            'icon'  => 'article-outline', 
+            'icon'  => 'book',
         ]);
     }
 }
