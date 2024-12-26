@@ -6,7 +6,6 @@ use PYB\Article\Models\Article;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleService
-
 {
     public function store($request, $user_id, $imageName, $imagePath)
     {
@@ -22,6 +21,8 @@ class ArticleService
             'status' => $request->status,
             'type' => $request->type,
             'body' => $request->body,
+            'keywords' => $request->keywords,
+            'description' => $request->description,
         ]);
     }
 
@@ -38,28 +39,45 @@ class ArticleService
             'status' => $request->status,
             'type' => $request->type,
             'body' => $request->body,
+            'keywords' => $request->keywords,
+            'description' => $request->description,
         ]);
     }
 
     public function uploadImage($file)
     {
-        $name = time() . '.' . $file->getClientOriginalExtention();
-        dd($name);
+        $name = time() . '.' . $file->getClientOriginalExtension();
         Storage::disk('public')->putFileAs('images', $file, $name);
 
-        $path = asset('storage/' . $name);
+        $path = asset('storage/images/' . $name);
 
         return [$name, $path];
+    }
+
+    public function deleteImage($article)
+    {
+        //        if (File::exists(public_path('storage/images/' . $article->imageName))) {
+        //            return File::delete(public_path('storage/images/' . $article->imageName));
+        //        }
+        if (Storage::disk('public')->exists('images/' . $article->imageName)) {
+            return Storage::disk('public')->delete('images/' . $article->imageName);
+        }
+
+        return null;
+    }
+
+    public function changeStatus($article)
+    {
+        if ($article->status === Article::STATUS_ACTIVE) {
+            return $article->update(['status' => Article::STATUS_INACTIVE]);
+        }
+
+        return $article->update(['status' => Article::STATUS_ACTIVE]);
     }
 
     private function makeSlug($title)
     {
         $url = str_replace('_', '', $title);
         return preg_replace('/\s+/', '-', $url);
-    }
-
-    public function deleteImage($article)
-    {
-        //
     }
 }

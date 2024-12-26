@@ -1,8 +1,8 @@
 <?php
 
-namespace Mlk\User\Services;
+namespace PYB\User\Services;
 
-use Mlk\User\Models\User;
+use PYB\User\Models\User;
 
 class UserService
 {

@@ -2,13 +2,12 @@
 
 namespace PYB\Article\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use PYB\Article\Models\Article;
 use App\Http\Controllers\Controller;
-use PYB\Article\Requests\ArticleRequest;
 use PYB\Article\Services\ArticleService;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Category\Repositories\CategoryRepo;
+use PYB\Article\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -28,7 +27,7 @@ class ArticleController extends Controller
         $this->authorize('manage', $this->class);
         $articles = $this->repo->index()->paginate(10);
 
-        return view('Articel::Admin.index', compact('articles'));
+        return view('Article::Admin.index', compact('articles'));
     }
 
     public function create(CategoryRepo $categoryRepo)
@@ -36,7 +35,7 @@ class ArticleController extends Controller
         $this->authorize('manage', $this->class);
         $categories = $categoryRepo->getActiveCategories()->get();
 
-        return view('Articel::Admin.create', compact('categories'));
+        return view('Article::Admin.create', compact('categories'));
     }
 
     public function store(ArticleRequest $request)
@@ -57,7 +56,7 @@ class ArticleController extends Controller
         $article = $this->repo->findById($id);
         $categories = $categoryRepo->getActiveCategories()->get();
 
-        return view('Articel::Admin.edit', compact(['article', 'categories']));
+        return view('Article::Admin.edit', compact(['article', 'categories']));
     }
 
     public function update(ArticleRequest $request, $id)
@@ -87,6 +86,16 @@ class ArticleController extends Controller
         return to_route('articles.index');
     }
 
+    public function changeStatus($id)
+    {
+        $article = $this->repo->findById($id);
+        $this->service->changeStatus($article);
+
+        alert()->success('تغییر وضعیت مقاله', 'عملیات با موفقیت انجام شد');
+        return to_route('articles.index');
+    }
+
+    // Private Method
     private function uploadImage($file, $article): array
     {
         if (!is_null($file)) {

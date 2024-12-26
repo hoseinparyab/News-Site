@@ -16,6 +16,9 @@ class ArticleServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         $this->loadViewsFrom(__DIR__ . '/../Resources/Views/', 'Article');
         $this->loadRoutesFrom(__DIR__ . '/../Routes/article_routes.php');
+        $this->loadJsonTranslationsFrom(__DIR__ . '/../Resources/Lang/');
+
+
         Route::middleware('web')->namespace('PYB\Article\Http\Controllers')
             ->group(__DIR__ . '/../Routes/article_routes.php');
          Gate::policy(Article::class, ArticlePolicy::class);

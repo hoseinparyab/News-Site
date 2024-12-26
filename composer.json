@@ -33,12 +33,12 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "PYB\\Home\\": "Modules/PYB/Home",
-            "PYB\\User\\": "Modules/PYB/User",
-            "PYB\\Auth\\": "Modules/PYB/Auth",
+            "PYB\\Home\\": "Modules/PYB/Home/",
+            "PYB\\User\\": "Modules/PYB/User/",
+            "PYB\\Auth\\": "Modules/PYB/Auth/",
+            "PYB\\Role\\": "Modules/PYB/Role/",
             "PYB\\Panel\\": "Modules/PYB/Panel/",
             "PYB\\Category\\": "Modules/PYB/Category/",
-            "PYB\\Role\\": "Modules/PYB/Role/",
             "PYB\\Article\\": "Modules/PYB/Article/"
         }
     },

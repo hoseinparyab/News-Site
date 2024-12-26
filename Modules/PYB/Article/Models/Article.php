@@ -14,25 +14,49 @@ class Article extends Model implements Viewable
 {
     use HasFactory, InteractsWithViews, Likeable;
 
-    protected $fillable = ['user_id', 'category_id', 'title', 'slug', 'time_to_read', 'imageName',
-     'imagePath', 'score', 'body', 'status', 'type'];
+    protected $fillable = [
+        'user_id',
+        'category_id',
+        'title',
+        'slug',
+        'time_to_read',
+        'imageName',
+        'imagePath',
+        'score',
+        'status',
+        'type',
+        'body',
+        'keywords',
+        'description',
+    ];
 
     public const STATUS_ACTIVE = 'active';
-    public const STATUS_INACTIVE = 'inactive';
     public const STATUS_PENDING = 'pending';
-    public static  $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_PENDING];
+    public const STATUS_INACTIVE = 'inactive';
+
+    public static array $statuses = [self::STATUS_ACTIVE, self::STATUS_PENDING, self::STATUS_INACTIVE];
 
     public const TYPE_VIP = 'vip';
     public const TYPE_NORMAL = 'normal';
 
-    public static  $types = [self::TYPE_VIP, self::TYPE_NORMAL];
+    public static array $types = [self::TYPE_VIP, self::TYPE_NORMAL];
+
     // Relations
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
     public function category()
     {
-        return $this->belongsTo(Category::class, ' category_id');
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    // Methods
+    public function cssStatus()
+    {
+        if ($this->status === self::STATUS_ACTIVE) return 'success';
+        else if ($this->status === self::STATUS_INACTIVE) return 'danger';
+        else return 'warning';
     }
 }

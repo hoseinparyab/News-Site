@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('imageName');
             $table->string('imagePath');
             $table->string('score')->default(0);
+            $table->string('Keywords')->nullable();
+            $table->string('description')->nullable();
             $table->longText('body');
             $table->enum('status',\PYB\Article\Models\Article::$statuses);
             $table->enum('type', \PYB\Article\Models\Article::$types)->default(\PYB\Article\Models\Article::TYPE_NORMAL);

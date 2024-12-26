@@ -43,7 +43,7 @@
                                         <label class="col-sm-2 col-form-label" for="status">وضعیت دسته بندی</label>
                                         <div class="col-sm-10">
                                             <select class="form-control @error('status') is-invalid @enderror" name="status">
-                                                @foreach (Mlk\Category\Models\Category::$statuses as $status)
+                                                @foreach (PYB\Category\Models\Category::$statuses as $status)
                                                     <option @if ($category->status === $status) selected @endif
                                                         value="{{ $status }}">@lang($status)
                                                     </option>

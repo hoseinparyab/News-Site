@@ -37,6 +37,7 @@
                                         <th scope="row">{{ $loop->iteration }}</th>
                                         <td>
                                             <img src="{{ $article->imagePath }}" width="80">
+                                        </td>
                                         <td>{{ $article->title }}</td>
                                         <td>
                                             <span class="badge badge-{{ $article->cssStatus() }}">
@@ -46,7 +47,7 @@
                                         <td>@lang($article->type)</td>
                                         <td>{{ $article->time_to_read }} دقیقه </td>
                                         <td>{{ $article->score }} امتیاز </td>
-                                        {{-- <td>{{ $article->category->title }}</td> --}}
+                                        <td>{{ $article->category->title }}</td>
                                         <td>{{ $article->user->name }}</td>
                                         <td>{{ jdate($article->created_at)->format('Y-m-d') }}</td>
                                         <td>
