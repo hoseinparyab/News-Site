@@ -4,6 +4,7 @@ namespace PYB\Article\Http\Controllers\Admin;
 
 use PYB\Article\Models\Article;
 use App\Http\Controllers\Controller;
+use PYB\Share\Repositories\ShareRepo;
 use PYB\Article\Services\ArticleService;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Category\Repositories\CategoryRepo;
@@ -46,7 +47,8 @@ class ArticleController extends Controller
 
         $this->service->store($request, auth()->id(), $imageName, $imagePath);
 
-        alert()->success('ساخت مقاله', 'عملیات با موفقیت انجام شد');
+        //        alert()->success(, 'عملیات با موفقیت انجام شد');
+        ShareRepo::successMessage('ساخت مقاله');
         return to_route('articles.index');
     }
 
@@ -70,7 +72,7 @@ class ArticleController extends Controller
 
         $this->service->update($request, $id, $imageName, $imagePath);
 
-        alert()->success('ویرایش مقاله', 'عملیات با موفقیت انجام شد');
+        ShareRepo::successMessage('ویرایش مقاله');
         return to_route('articles.index');
     }
 
@@ -82,7 +84,7 @@ class ArticleController extends Controller
         $this->service->deleteImage($article);
         $this->repo->delete($id);
 
-        alert()->success('حذف مقاله', 'عملیات با موفقیت انجام شد');
+        ShareRepo::successMessage('حذف مقاله');
         return to_route('articles.index');
     }
 
@@ -91,7 +93,7 @@ class ArticleController extends Controller
         $article = $this->repo->findById($id);
         $this->service->changeStatus($article);
 
-        alert()->success('تغییر وضعیت مقاله', 'عملیات با موفقیت انجام شد');
+        ShareRepo::successMessage('تغییر وضعیت مقاله');
         return to_route('articles.index');
     }
 
@@ -108,3 +110,4 @@ class ArticleController extends Controller
         return array($imageName, $imagePath);
     }
 }
+

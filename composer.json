@@ -40,7 +40,8 @@
             "PYB\\Panel\\": "Modules/PYB/Panel/",
             "PYB\\Category\\": "Modules/PYB/Category/",
             "PYB\\Article\\": "Modules/PYB/Article/",
-            "PYB\\Comment\\": "Modules/PYB/Comment/"
+            "PYB\\Comment\\": "Modules/PYB/Comment/",
+            "PYB\\Share\\": "Modules/PYB/Share/"
         }
     },
     "autoload-dev": {
