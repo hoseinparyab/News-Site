@@ -39,7 +39,8 @@
             "PYB\\Role\\": "Modules/PYB/Role/",
             "PYB\\Panel\\": "Modules/PYB/Panel/",
             "PYB\\Category\\": "Modules/PYB/Category/",
-            "PYB\\Article\\": "Modules/PYB/Article/"
+            "PYB\\Article\\": "Modules/PYB/Article/",
+            "PYB\\Comment\\": "Modules/PYB/Comment/"
         }
     },
     "autoload-dev": {
