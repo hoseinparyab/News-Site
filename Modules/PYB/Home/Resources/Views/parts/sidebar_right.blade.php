@@ -10,21 +10,21 @@
                 <div id="datetime" class="d-inline-block">
                     <ul>
                         <li><span class="font-small">
-                                <a class="text-primary" href="#">تهران</a><br>
-                                <i class="wi wi-day-sunny ml-5"></i>32ºc
-                            </span>
+                                                            <a class="text-primary" href="#">تهران</a><br>
+                                                            <i class="wi wi-day-sunny ml-5"></i>32ºc
+                                                        </span>
                             <p>آفتابی</p>
                         </li>
                         <li><span class="font-small">
-                                <a class="text-danger" href="#">کرج</a><br>
-                                <i class="wi wi-day-cloudy ml-5"></i>28ºc
-                            </span>
+                                                            <a class="text-danger" href="#">کرج</a><br>
+                                                            <i class="wi wi-day-cloudy ml-5"></i>28ºc
+                                                        </span>
                             <p>ابری</p>
                         </li>
                         <li><span class="font-small">
-                                <a class="text-success" href="#">رشت</a><br>
-                                <i class="wi wi-rain-mix ml-5"></i>25ºc
-                            </span>
+                                                            <a class="text-success" href="#">رشت</a><br>
+                                                            <i class="wi wi-rain-mix ml-5"></i>25ºc
+                                                        </span>
                             <p>بارانی</p>
                         </li>
                     </ul>
