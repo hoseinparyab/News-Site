@@ -21,7 +21,9 @@ class Comment extends Model
         self::STATUS_NEW,
         self::STATUS_INACTIVE,
     ];
+
     // Relations
+    
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
