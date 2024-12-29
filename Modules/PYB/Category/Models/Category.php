@@ -34,6 +34,11 @@ class Category extends Model
         return $this->hasMany(__CLASS__, 'parent_id');
     }
 
+
+    public function article()
+    {
+        return $this->hasMany(Article::class);
+    }
     // Methods
     public function getParent()
     {
@@ -41,9 +46,9 @@ class Category extends Model
 
         return $this->parentCategory->title;
     }
-
-    public function article()
+    public function path()
     {
-        return $this->hasMany(Article::class);
+        return route('categories.details', $this->slug);
     }
+
 }

@@ -2,13 +2,14 @@
 
 namespace PYB\Home\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use PYB\Home\Repositories\HomeRepo;
+use App\Http\Controllers\Controller;
+use PYB\Category\Repositories\CategoryRepo;
 
 class HomeController extends Controller
 {
-    public function index(HomeRepo $homeRepo)
+    public function index()
     {
-        return view('Home::index', compact('homeRepo'));
+        return view('Home::index' );
     }
 }

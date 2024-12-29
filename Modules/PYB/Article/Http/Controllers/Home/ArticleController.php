@@ -20,12 +20,12 @@ class ArticleController extends Controller
         $this->repo = $articleRepo;
     }
 
-    //    public function index()
-    //    {
-    //        $articles = $this->repo->index()->paginate(10);
-    //
-    //        return view('Article::Admin.index', compact('articles'));
-    //    }
+       public function home()
+       {
+        //    $articles = $this->repo->index()->paginate(10);
+
+           return view('Article::Home.home');
+       }
 
     public function details($slug, HomeRepo $homeRepo)
     {
