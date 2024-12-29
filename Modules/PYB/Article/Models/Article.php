@@ -59,4 +59,8 @@ class Article extends Model implements Viewable
         else if ($this->status === self::STATUS_INACTIVE) return 'danger';
         else return 'warning';
     }
+    public function path()
+    {
+        return route('articles.details', $this->slug);
+    }
 }

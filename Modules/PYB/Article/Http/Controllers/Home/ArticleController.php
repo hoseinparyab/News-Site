@@ -2,13 +2,14 @@
 
 namespace PYB\Article\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
-use PYB\Article\Http\Requests\ArticleRequest;
 use PYB\Article\Models\Article;
-use PYB\Article\Repositories\ArticleRepo;
-use PYB\Article\Services\ArticleService;
-use PYB\Category\Repositories\CategoryRepo;
+use PYB\Home\Repositories\HomeRepo;
+use App\Http\Controllers\Controller;
 use PYB\Share\Repositories\ShareRepo;
+use PYB\Article\Services\ArticleService;
+use PYB\Article\Repositories\ArticleRepo;
+use PYB\Category\Repositories\CategoryRepo;
+use PYB\Article\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -26,12 +27,13 @@ class ArticleController extends Controller
     //        return view('Article::Admin.index', compact('articles'));
     //    }
 
-    public function details($slug)
+    public function details($slug, HomeRepo $homeRepo)
     {
         $article = $this->repo->findBySlug($slug);
 
         if (is_null($article)) abort(404);
+        $relatedArticles = $this->repo->relatedArticles($article->category_id, $article->id)->limit(3)->get();
 
-        return view('Article::Home.details', compact('article'));
+        return view('Article::Home.details', compact(['article', 'relatedArticles', 'homeRepo']));
     }
 }
