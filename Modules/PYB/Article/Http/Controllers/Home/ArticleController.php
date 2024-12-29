@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use PYB\Share\Repositories\ShareRepo;
 use PYB\Article\Services\ArticleService;
 use PYB\Article\Repositories\ArticleRepo;
+use PYB\Comment\Repositories\CommentRepo;
 use PYB\Category\Repositories\CategoryRepo;
 use PYB\Article\Http\Requests\ArticleRequest;
 
@@ -20,11 +21,12 @@ class ArticleController extends Controller
         $this->repo = $articleRepo;
     }
 
-       public function home()
+       public function home(CommentRepo $commentRepo)
        {
-        //    $articles = $this->repo->index()->paginate(10);
-
-           return view('Article::Home.home');
+           $articles = $this->repo->index()->paginate(6);
+           $viewsArticles = $this->repo->getArticlesByViews()->latest()->limit(5)->get();
+           $latestComments = $commentRepo->getlatestComments()->limit(5)->get();
+           return view('Article::Home.home', compact('articles', 'viewsArticles', 'latestComments'));
        }
 
     public function details($slug, HomeRepo $homeRepo)

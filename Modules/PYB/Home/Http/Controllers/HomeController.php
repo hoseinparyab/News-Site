@@ -8,8 +8,8 @@ use PYB\Category\Repositories\CategoryRepo;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(HomeRepo $homeRepo)
     {
-        return view('Home::index' );
+        return view('Home::index', compact(['homeRepo']));
     }
 }

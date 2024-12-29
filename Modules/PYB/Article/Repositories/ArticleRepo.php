@@ -33,6 +33,15 @@ class ArticleRepo
         ->whereStatus(Article::STATUS_ACTIVE)
         ->where('id', '!=', $id);
     }
+     public function home()
+     {
+            return $this->query()->whereStatus(Article::STATUS_ACTIVE)->latest()->paginate(6);
+     }
+
+     public function getArticlesByViews()
+        {
+            return $this->query()->whereStatus(Article::STATUS_ACTIVE)->orderByViews();
+        }
     private function query()
     {
         return Article::query();
