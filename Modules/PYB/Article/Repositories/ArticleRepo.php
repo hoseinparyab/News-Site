@@ -25,5 +25,11 @@ class ArticleRepo
     {
         return Article::query();
     }
+     public function findBySlug($slug)
+     {
+          return $this->query()->whereSlug($slug)->first();
+     }
+
+
 }
 

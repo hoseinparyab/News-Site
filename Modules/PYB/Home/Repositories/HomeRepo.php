@@ -22,7 +22,7 @@ class HomeRepo
     public function getVipArticlesOrderByView()
     {
         return Article::query()->where('status', Article::STATUS_ACTIVE)->whereType(Article::TYPE_VIP)
-            ->orderByViews()->latest()->limit(5)->get();
+        ->orderByViews()->latest()->limit(5)->get();
     }
 
     public function getAuthorUsers()
@@ -33,7 +33,7 @@ class HomeRepo
     public function getArticlesOrderByView()
     {
         return Article::query()->where('status', Article::STATUS_ACTIVE)->whereType(Article::TYPE_NORMAL)
-            ->orderByViews()->latest()->limit(3)->get();
+        ->orderByViews()->latest()->limit(3)->get();
     }
 
     public function getNewArticles()
