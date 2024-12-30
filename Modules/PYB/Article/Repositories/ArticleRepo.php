@@ -29,25 +29,25 @@ class ArticleRepo
     public function relatedArticles($categorId, $id)
     {
         return $this->query()
-        ->where('category_id', $categorId)
-        ->whereStatus(Article::STATUS_ACTIVE)
-        ->where('id', '!=', $id);
+            ->where('category_id', $categorId)
+            ->whereStatus(Article::STATUS_ACTIVE)
+            ->where('id', '!=', $id);
     }
-     public function home()
-     {
-            return $this->query()->whereStatus(Article::STATUS_ACTIVE)->latest()->paginate(6);
-     }
+    public function home()
+    {
+        return $this->query()->whereStatus(Article::STATUS_ACTIVE)->latest()->paginate(6);
+    }
 
-     public function getArticlesByViews()
-        {
-            return $this->query()->whereStatus(Article::STATUS_ACTIVE)->orderByViews();
-        }
+    public function getArticlesByViews()
+    {
+        return $this->query()->whereStatus(Article::STATUS_ACTIVE)->orderByViews();
+    }
+    public function getArticlesByUserId($user_id)
+    {
+        return $this->query()->whereStatus(Article::STATUS_ACTIVE)->where('user_id', $user_id);
+    }
     private function query()
     {
         return Article::query();
     }
-
-
-
 }
-
