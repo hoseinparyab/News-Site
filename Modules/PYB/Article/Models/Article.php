@@ -9,10 +9,10 @@ use Overtrue\LaravelLike\Traits\Likeable;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use PYB\Comment\Trait\HaveComments;
 class Article extends Model implements Viewable
 {
-    use HasFactory, InteractsWithViews, Likeable;
+    use HasFactory, InteractsWithViews, Likeable , HaveComments;
 
     protected $fillable = [
         'user_id',
@@ -52,6 +52,7 @@ class Article extends Model implements Viewable
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+
     // Methods
     public function cssStatus()
     {
@@ -63,4 +64,10 @@ class Article extends Model implements Viewable
     {
         return route('articles.details', $this->slug);
     }
+    //  public function getCommentCount()  //FIXED: 1- change the method name to getCommentsCount
+    // {
+    //    if(is_null($this->comments)) return 0;
+    //      return $this->comments->count();
+
+    // }
 }

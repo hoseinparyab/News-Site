@@ -19,25 +19,11 @@
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control @error('title') is-invalid @enderror"
                                             value="{{ old('title') }}" id="title" name="title" placeholder="عنوان مقاله را وارد کنید">
-                                            @error('title')
+8                                            @error('title')
                                                 <br>
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label" for="keywords">کلمات کلیدی (اجباری نیست)</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control @error('keywords') is-invalid @enderror"
-                                            value="{{ old('keywords') }}" id="keywords" name="keywords"
-                                            placeholder="کلمات کلیدی مقاله را وارد کنید">
-                                            @error('keywords')
-                                                <br>
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
+                                        </div>          
                                         <label class="col-sm-2 col-form-label" for="time_to_read">زمان برای خوانده شدن</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control @error('time_to_read') is-invalid @enderror"
