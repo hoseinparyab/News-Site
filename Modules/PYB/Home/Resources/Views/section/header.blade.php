@@ -24,12 +24,12 @@
                 <div class="col-lg-10 col-md-9 main-header-navigation">
                     <div class="main-nav text-right float-lg-right float-md-left">
                         <ul class="mobi-menu d-none menu-3-columns" id="navigation">
-                            <li class="cat-item cat-item-2"><a href="#">صفحه اصلی</a></li>
-                            <li class="cat-item cat-item-3"><a href="#">مقالات</a></li>
-                            <li class="cat-item cat-item-4"><a href="#">نویسنده ها</a></li>
+                            <li class="cat-item cat-item-2"><a href="{{ route('home.index') }}">صفحه اصلی</a></li>
+                            <li class="cat-item cat-item-3"><a href="{{ route('articles.home') }}">مقالات</a></li>
+                            <li class="cat-item cat-item-4"><a href="{{ route('users.authors') }}">نویسنده ها</a></li>
                             @auth
                                 <li class="cat-item cat-item-5"><a href="#">{{ auth()->user()->name }}</a></li>
-                                <li class="cat-item cat-item-6"><a href="{{ route('logout') }}">خروج</a></li>
+                                <li class="cat-item cat-item-6"><a href="{{ route('auth.logout') }}">خروج</a></li>
                             @endauth
                             @guest
                                 <li class="cat-item cat-item-7"><a href="{{ route('auth.register') }}">ثبت نام</a></li>
@@ -49,7 +49,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('home.index') }}">
+                                    <a href="{{ route('users.authors') }}">
                                         نویسنده ها
                                     </a>
                                 </li>
@@ -72,15 +72,15 @@
 {{--                                </li>--}}
                                 @auth
                                     <li>
-                                        <a href="">
+                                        <a href="{{ route('users.profile') }}">
                                             <span class="ml-15">
                                                 <ion-icon name="mail-unread-outline"></ion-icon>
                                             </span>
-                                            {{ auth()->user()->name }}
+                                            پروفایل
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('logout') }}">
+                                        <a href="{{ route('auth.logout') }}">
                                             <span class="ml-15">
                                                 <ion-icon name="mail-unread-outline"></ion-icon>
                                             </span>
