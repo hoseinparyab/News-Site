@@ -4,6 +4,7 @@ namespace PYB\Home\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use PYB\Comment\Repositories\CommentRepo;
 use PYB\Category\Repositories\CategoryRepo;
 
 class HomeServiceProvider extends ServiceProvider
@@ -24,7 +25,12 @@ class HomeServiceProvider extends ServiceProvider
             $view->with(['categories' => $categories]);
         });
 
+        view()->composer(['Home::parts.sidebar_left'], static function ($view) {
+            $commentRepo = new CommentRepo;
+            $latestComments = $commentRepo->getlatestComments()->limit(4)->get();
 
+            $view->with(['latestComments' => $latestComments]);
+        });
 
         config()->set('panelConfig.menus.home', [
             'url'   => route('home.index'),
