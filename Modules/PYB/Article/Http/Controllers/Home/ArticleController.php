@@ -25,7 +25,8 @@ class ArticleController extends Controller
        {
            $articles = $this->repo->index()->paginate(6);
            $viewsArticles = $this->repo->getArticlesByViews()->latest()->limit(5)->get();
-           $latestComments = $commentRepo->getlatestComments()->limit(5)->get();
+           $latestComments = $commentRepo->getLatestComments()->limit(3)->get();
+
            return view('Article::Home.home', compact('articles', 'viewsArticles', 'latestComments'));
        }
 

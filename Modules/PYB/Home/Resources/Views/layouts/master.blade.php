@@ -22,6 +22,8 @@
 
             <!-- Footer Start-->
             @include('Home::section.footer')
+            @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
         </div>
         <div class="dark-mark"></div>
         @include('Home::section.js')
