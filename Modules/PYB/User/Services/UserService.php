@@ -36,5 +36,21 @@ class UserService
     {
         return $user->removeRole($role);
     }
+     public function updateProfile($request, $id ,$imageName ,$imagePath)
+     {
+
+        return User::query()->where('id', $id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'telegram' => $request->telegram,
+            'linkedin' => $request->linkedin,
+            'twitter' => $request->twitter,
+            'instagram' => $request->instagram,
+            'bio' => $request->bio,
+            'imageName' => $imageName,
+            'imagePath' => $imagePath,
+        ]);
+     }
 
 }

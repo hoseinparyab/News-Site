@@ -15,5 +15,7 @@ Route::group(['namespace'=> 'Home'], static function ($router) {
 
     $router->get('authors', 'UserController@authors')->name('users.authors');
     $router->get('authors{name}', 'UserController@author')->name('users.author');
+    $router->get('profile', 'UserController@profile')->name('users.profile')->middleware('auth');
+    $router->path('profile', 'UserController@updateProfile')->name('users.update.profile')->middleware('auth');
 
 });
