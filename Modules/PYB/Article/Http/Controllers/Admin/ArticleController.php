@@ -4,6 +4,7 @@ namespace PYB\Article\Http\Controllers\Admin;
 
 use PYB\Article\Models\Article;
 use App\Http\Controllers\Controller;
+use PYB\Share\Services\ShareService;
 use PYB\Share\Repositories\ShareRepo;
 use PYB\Article\Services\ArticleService;
 use PYB\Article\Repositories\ArticleRepo;
@@ -43,7 +44,7 @@ class ArticleController extends Controller
     {
         $this->authorize('manage', $this->class);
 
-        [$imageName, $imagePath] = $this->service->uploadImage($request->file('image'));
+        [$imageName, $imagePath] = ShareService::uploadImage($request->file('image'), 'articles');
 
         $this->service->store($request, auth()->id(), $imageName, $imagePath);
 

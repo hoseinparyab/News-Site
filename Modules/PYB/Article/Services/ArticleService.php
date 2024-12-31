@@ -44,15 +44,6 @@ class ArticleService
         ]);
     }
 
-    public function uploadImage($file)
-    {
-        $name = time() . '.' . $file->getClientOriginalExtension();
-        Storage::disk('public')->putFileAs('images', $file, $name);
-
-        $path = asset('storage/images/' . $name);
-
-        return [$name, $path];
-    }
 
     public function deleteImage($article)
     {
