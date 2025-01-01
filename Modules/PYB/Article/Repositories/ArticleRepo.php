@@ -46,6 +46,12 @@ class ArticleRepo
     {
         return $this->query()->whereStatus(Article::STATUS_ACTIVE)->where('user_id', $user_id);
     }
+
+    public function getArticlesByCategoryId($id)
+    {
+        return $this->query()->whereStatus(Article::STATUS_ACTIVE)->where('category_id', $id);
+    }
+
     private function query()
     {
         return Article::query();
