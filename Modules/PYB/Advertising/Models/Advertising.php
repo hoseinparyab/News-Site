@@ -6,37 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use PYB\User\Models\User;
 
-class AdvertisingService
+class Advertising extends Model
 {
-    public function store($request, $imagePath, $imageName)
-    {
-        return Advertising::query()->create([
-            'user_id' => auth()->id(),
-            'imagePath' => $imagePath,
-            'imageName' => $imageName,
-            'link' => $request->link,
-            'title' => $request->title,
-            'location' => $request->location,
-        ]);
-    }
+    use HasFactory;
 
-    public function update($request, $id, $imagePath, $imageName)
-    {
-        return Advertising::query()->where('id', $id)->update([
-            'imagePath' => $imagePath,
-            'imageName' => $imageName,
-            'link' => $request->link,
-            'title' => $request->title,
-            'location' => $request->location,
-        ]);
-    }
+    protected $fillable = ['user_id', 'imagePath', 'imageName', 'link', 'title', 'location'];
 
-    public function deleteImage($article)
-    {
-        if (Storage::disk('public')->exists('images/' . $article->imageName)) {
-            return Storage::disk('public')->delete('images/' . $article->imageName);
-        }
+    // Variables
+    public const LOCATION_TOP_MAIN_PAGE = 'top main page';
+    public const LOCATION_BOTTOM_MAIN_PAGE = 'bottom main page';
+    public const LOCATION_DETAIL_ARTICLES = 'detail articles';
 
-        return null;
+    public static array $locations = [
+        self::LOCATION_TOP_MAIN_PAGE,
+        self::LOCATION_BOTTOM_MAIN_PAGE,
+        self::LOCATION_DETAIL_ARTICLES,
+    ];
+
+    // Relations
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
