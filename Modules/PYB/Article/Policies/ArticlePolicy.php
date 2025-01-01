@@ -2,8 +2,8 @@
 
 namespace PYB\Article\Policies;
 
-use PYB\User\Models\User;
 use PYB\Role\Models\Permission;
+use PYB\User\Models\User;
 
 class ArticlePolicy
 {

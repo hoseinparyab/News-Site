@@ -2,9 +2,8 @@
 
 namespace PYB\Home\Http\Controllers;
 
-use PYB\Home\Repositories\HomeRepo;
 use App\Http\Controllers\Controller;
-use PYB\Category\Repositories\CategoryRepo;
+use PYB\Home\Repositories\HomeRepo;
 
 class HomeController extends Controller
 {

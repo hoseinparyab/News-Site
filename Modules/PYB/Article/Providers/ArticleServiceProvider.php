@@ -2,10 +2,10 @@
 
 namespace PYB\Article\Providers;
 
-use PYB\Article\Models\Article;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use PYB\Article\Models\Article;
 use PYB\Article\Policies\ArticlePolicy;
 
 class ArticleServiceProvider extends ServiceProvider

@@ -2,11 +2,11 @@
 
 namespace PYB\Panel\Providers;
 
-use PYB\Panel\Models\Panel;
-use Mlk\Panel\Policies\PanelPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Mlk\Panel\Policies\PanelPolicy;
+use PYB\Panel\Models\Panel;
 
 class PanelServiceProvider extends ServiceProvider
 {

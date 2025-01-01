@@ -195,7 +195,7 @@ return [
         PYB\Role\Providers\RoleServiceProvider::class,
         PYB\Article\Providers\ArticleServiceProvider::class,
         PYB\Comment\Providers\CommentServiceProvider::class,
-        PYB\Share\Providers\ShareServiceProvider::class,
+        PYB\Advertising\Providers\AdvertisingServiceProvider::class,
 
 
 

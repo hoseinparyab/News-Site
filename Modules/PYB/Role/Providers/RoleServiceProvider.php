@@ -2,14 +2,14 @@
 
 namespace PYB\Role\Providers;
 
-use PYB\Role\Models\Role;
-use PYB\Role\Models\Permission;
-use PYB\Role\Policies\RolePolicy;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use PYB\Role\Database\Seeders\PermissionSeeder;
+use PYB\Role\Models\Permission;
+use PYB\Role\Models\Role;
+use PYB\Role\Policies\RolePolicy;
 
 class RoleServiceProvider extends ServiceProvider
 {

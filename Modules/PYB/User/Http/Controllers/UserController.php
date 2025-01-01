@@ -2,15 +2,14 @@
 
 namespace PYB\User\Http\Controllers;
 
-use PYB\User\Models\User;
-use Illuminate\Http\Request;
-use PYB\User\Services\UserService;
-use PYB\Role\Repositories\RoleRepo;
-use PYB\User\Repositories\UserRepo;
 use App\Http\Controllers\Controller;
-use PYB\User\Http\Requests\UserRequest;
+use PYB\Role\Repositories\RoleRepo;
 use PYB\User\Http\Requests\AddRoleRequest;
+use PYB\User\Http\Requests\UserRequest;
 use PYB\User\Http\Requests\UserUpdateRequest;
+use PYB\User\Models\User;
+use PYB\User\Repositories\UserRepo;
+use PYB\User\Services\UserService;
 
 class UserController extends Controller
 {

@@ -3,9 +3,6 @@
 namespace PYB\User\Services;
 
 use PYB\User\Models\User;
-use PYB\Role\Repositories\RoleRepo;
-use Illuminate\Support\Facades\Hash;
-use PYB\User\Http\Requests\AddRoleRequest;
 
 class UserService
 {

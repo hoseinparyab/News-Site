@@ -2,12 +2,12 @@
 
 namespace PYB\Role\Http\Controllers;
 
-use PYB\Role\Models\Role;
-use PYB\Role\Services\RoleService;
-use PYB\Role\Repositories\RoleRepo;
 use App\Http\Controllers\Controller;
 use PYB\Role\Http\Requests\RoleRequest;
+use PYB\Role\Models\Role;
 use PYB\Role\Repositories\PermissionRepo;
+use PYB\Role\Repositories\RoleRepo;
+use PYB\Role\Services\RoleService;
 
 class RoleController extends Controller
 {

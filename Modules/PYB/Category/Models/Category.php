@@ -2,10 +2,10 @@
 
 namespace PYB\Category\Models;
 
-use PYB\User\Models\User;
-use PYB\Article\Models\Article;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use PYB\Article\Models\Article;
+use PYB\User\Models\User;
 
 class Category extends Model
 {

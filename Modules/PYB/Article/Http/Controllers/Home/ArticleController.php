@@ -2,15 +2,10 @@
 
 namespace PYB\Article\Http\Controllers\Home;
 
-use PYB\Article\Models\Article;
-use PYB\Home\Repositories\HomeRepo;
 use App\Http\Controllers\Controller;
-use PYB\Share\Repositories\ShareRepo;
-use PYB\Article\Services\ArticleService;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Comment\Repositories\CommentRepo;
-use PYB\Category\Repositories\CategoryRepo;
-use PYB\Article\Http\Requests\ArticleRequest;
+use PYB\Home\Repositories\HomeRepo;
 
 class ArticleController extends Controller
 {

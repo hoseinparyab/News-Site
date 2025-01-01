@@ -2,10 +2,10 @@
 
 namespace PYB\Category\Providers;
 
-use PYB\Category\Models\Category;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use PYB\Category\Models\Category;
 use PYB\Category\Policies\CategoryPolicy;
 
 class CategoryServiceProvider extends ServiceProvider

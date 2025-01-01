@@ -2,11 +2,11 @@
 
 namespace PYB\Auth\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
 use PYB\Auth\Http\Requests\PasswordUpdateRequest;
 use PYB\Auth\Http\Requests\SendEmailPasswordRecoveryRequest;
 

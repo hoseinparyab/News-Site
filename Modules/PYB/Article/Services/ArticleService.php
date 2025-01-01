@@ -2,8 +2,8 @@
 
 namespace PYB\Article\Services;
 
-use PYB\Article\Models\Article;
 use Illuminate\Support\Facades\Storage;
+use PYB\Article\Models\Article;
 
 class ArticleService
 {

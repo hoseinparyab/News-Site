@@ -2,11 +2,11 @@
 
 namespace PYB\Category\Http\Controllers;
 
-use PYB\Category\Models\Category;
 use App\Http\Controllers\Controller;
-use PYB\Category\Services\CategoryService;
-use PYB\Category\Repositories\CategoryRepo;
 use PYB\Category\Http\Requests\CategoryRequest;
+use PYB\Category\Models\Category;
+use PYB\Category\Repositories\CategoryRepo;
+use PYB\Category\Services\CategoryService;
 
 class CategoryController extends Controller
 {

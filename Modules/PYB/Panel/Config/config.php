@@ -9,6 +9,7 @@ return [
         'roles' => [],
         'articles' => [],
         'comments' => [],
+        'advertisings' => [],
 
     ],
 ];

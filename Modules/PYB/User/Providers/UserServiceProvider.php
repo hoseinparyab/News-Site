@@ -1,13 +1,12 @@
 <?php
 namespace PYB\User\Providers;
 
-use PYB\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
-use PYB\User\Policies\UserPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use PYB\User\Models\User;
+use PYB\User\Policies\UserPolicy;
 
 class UserServiceProvider extends ServiceProvider
 {

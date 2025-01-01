@@ -2,14 +2,14 @@
 
 namespace PYB\Article\Http\Controllers\Admin;
 
-use PYB\Article\Models\Article;
 use App\Http\Controllers\Controller;
-use PYB\Share\Services\ShareService;
-use PYB\Share\Repositories\ShareRepo;
-use PYB\Article\Services\ArticleService;
-use PYB\Article\Repositories\ArticleRepo;
-use PYB\Category\Repositories\CategoryRepo;
 use PYB\Article\Http\Requests\ArticleRequest;
+use PYB\Article\Models\Article;
+use PYB\Article\Repositories\ArticleRepo;
+use PYB\Article\Services\ArticleService;
+use PYB\Category\Repositories\CategoryRepo;
+use PYB\Share\Repositories\ShareRepo;
+use PYB\Share\Services\ShareService;
 
 class ArticleController extends Controller
 {

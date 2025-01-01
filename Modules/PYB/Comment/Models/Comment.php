@@ -2,9 +2,9 @@
 
 namespace PYB\Comment\Models;
 
-use PYB\User\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use PYB\User\Models\User;
 
 class Comment extends Model
 {
@@ -23,7 +23,7 @@ class Comment extends Model
     ];
 
     // Relations
-    
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

@@ -4,8 +4,8 @@ namespace PYB\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
-use PYB\Auth\Services\RegisterService;
 use PYB\Auth\Http\Requests\RegisterRequest;
+use PYB\Auth\Services\RegisterService;
 
 class RegisterController extends Controller
 {

@@ -2,16 +2,17 @@
 
 namespace PYB\User\Models;
 
-use PYB\Article\Models\Article;
-use PYB\Comment\Models\Comment;
-use Laravel\Sanctum\HasApiTokens;
-use PYB\Category\Models\Category;
-use Overtrue\LaravelLike\Traits\Liker;
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Overtrue\LaravelLike\Traits\Liker;
+use PYB\Advertising\Models\Advertising;
+use PYB\Article\Models\Article;
+use PYB\Category\Models\Category;
+use PYB\Comment\Models\Comment;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -80,5 +81,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+    public function advertisings()
+    {
+        return $this->hasMany(Advertising::class);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Mlk\Panel\Policies;
 
-use PYB\User\Models\User;
-use PYB\Role\Models\Permission;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use PYB\Role\Models\Permission;
+use PYB\User\Models\User;
 
 class PanelPolicy
 {

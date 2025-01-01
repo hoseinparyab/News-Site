@@ -4,8 +4,8 @@ namespace PYB\Home\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use PYB\Comment\Repositories\CommentRepo;
 use PYB\Category\Repositories\CategoryRepo;
+use PYB\Comment\Repositories\CommentRepo;
 
 class HomeServiceProvider extends ServiceProvider
 {

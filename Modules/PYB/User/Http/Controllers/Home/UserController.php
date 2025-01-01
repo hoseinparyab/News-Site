@@ -2,14 +2,14 @@
 
 namespace PYB\User\Http\Controllers\Home;
 
-use PYB\Role\Models\Permission;
-use PYB\User\Services\UserService;
 use App\Http\Controllers\Controller;
-use PYB\Share\Services\ShareService;
-use PYB\Share\Repositories\ShareRepo;
-use PYB\User\Repositories\Home\UserRepo;
 use PYB\Article\Repositories\ArticleRepo;
+use PYB\Role\Models\Permission;
+use PYB\Share\Repositories\ShareRepo;
+use PYB\Share\Services\ShareService;
 use PYB\User\Http\Requests\UpdateProfileRequest;
+use PYB\User\Repositories\Home\UserRepo;
+use PYB\User\Services\UserService;
 
 class UserController extends Controller
 {

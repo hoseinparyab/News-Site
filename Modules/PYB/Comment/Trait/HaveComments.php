@@ -2,8 +2,8 @@
 
 namespace PYB\Comment\Trait;
 
-use PYB\Comment\Models\Comment;
 use Illuminate\Database\Eloquent\Concerns\HasRelationships;
+use PYB\Comment\Models\Comment;
 
 trait HaveComments
 {
