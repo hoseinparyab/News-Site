@@ -21,4 +21,5 @@ trait HaveComments
             ->with('comments')
             ->whereNull('comment_id');
 }
+
 }

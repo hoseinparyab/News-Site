@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('imageName');
             $table->string('link')->nullable();
             $table->string('title');
+            $table->enum('location',\PYB\Advertising\Models\Advertising::$locations);
             $table->timestamps();
         });
     }
