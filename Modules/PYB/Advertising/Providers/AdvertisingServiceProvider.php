@@ -16,6 +16,7 @@ class AdvertisingServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../Resources/Views/', 'Advs');
         Route::middleware('web')->namespace($this->namespace)
             ->group(__DIR__ . '/../Routes/advertising_routes.php');
+        Gate::policy(Advertising::class, AdvertisingPolicy::class);
     }
 
     public function boot()

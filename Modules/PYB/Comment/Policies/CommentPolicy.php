@@ -1,12 +1,12 @@
 <?php
 
-namespace PYB\Article\Policies;
+namespace Mlk\Comment\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use PYB\Role\Models\Permission;
-use PYB\User\Models\User;
+use Mlk\Role\Models\Permission;
+use Mlk\User\Models\User;
 
-class ArticlePolicy
+class CommentPolicy
 {
     use HandlesAuthorization;
 
@@ -17,7 +17,7 @@ class ArticlePolicy
 
     public function manage(User $user)
     {
-        if ($user->hasPermissionTo(Permission::PERMISSION_ARTICLES)) {
+        if ($user->hasPermissionTo(Permission::PERMISSION_COMMENTS)) {
             return true;
         }
     }
