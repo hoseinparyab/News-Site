@@ -3,13 +3,12 @@
 namespace PYB\Advertising\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Advertising;
 use PYB\Advertising\Http\Requests\AdvertisingRequest;
+use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
 use PYB\Advertising\Services\AdvertisingService;
 use PYB\Share\Repositories\ShareRepo;
 use PYB\Share\Services\ShareService;
-
 
 class AdvertisingController extends Controller
 {

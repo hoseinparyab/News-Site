@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Policies;
+namespace PYB\Advertising\Policies;
 
+use Illuminate\Auth\Access\HandlesAuthorization;
 use PYB\Role\Models\Permission;
+use PYB\User\Models\User;
 
 class AdvertisingPolicy
 {
-    /**
-     * Create a new policy instance.
-     */
+    use HandlesAuthorization;
+
     public function __construct()
     {
         //
     }
-    public function mange($user)
+
+    public function index(User $user)
     {
-       if ($user ->hasPermission(Permission::PERMISSION_ADVERTISINGS))
-       {
-           return true;
-       }
+        if ($user->hasPermissionTo(Permission::PERMISSION_ADVERTISINGS)) {
+            return true;
+        }
     }
 }

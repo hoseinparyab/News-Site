@@ -8,25 +8,29 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('advertisings', function (Blueprint $table) {
+        Schema::create('advertisings', static function (Blueprint $table) {
             $table->id();
-            $table ->foreignIdFor(PYB\User\Models\User::class);
+            $table->foreignIdFor(PYB\User\Models\User::class);
             $table->text('imagePath');
-            $table->text('imageName');
+            $table->string('imageName');
             $table->string('link')->nullable();
             $table->string('title');
-            $table->enum('location',\PYB\Advertising\Models\Advertising::$locations);
+            $table->enum('location', PYB\Advertising\Models\Advertising::$locations);
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('advertisings');
     }
