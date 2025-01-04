@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Mlk\Comment\Policies\CommentPolicy;
-use PYB\Article\Models\Article;
-use PYB\Article\Policies\ArticlePolicy;
 use PYB\Comment\Models\Comment;
 
 class CommentServiceProvider extends ServiceProvider
