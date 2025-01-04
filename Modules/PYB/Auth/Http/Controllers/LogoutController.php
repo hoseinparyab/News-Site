@@ -2,8 +2,8 @@
 
 namespace PYB\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use PYB\Share\Http\Controllers\Controller;
 
 class LogoutController extends Controller
 {

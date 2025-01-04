@@ -2,10 +2,10 @@
 
 namespace PYB\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use PYB\Auth\Http\Requests\RegisterRequest;
 use PYB\Auth\Services\RegisterService;
+use PYB\Share\Http\Controllers\Controller;
 
 class RegisterController extends Controller
 {

@@ -2,9 +2,9 @@
 
 namespace PYB\Comment\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use PYB\Comment\Models\Comment;
 use PYB\Comment\Repositories\CommentRepo;
+use PYB\Share\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {

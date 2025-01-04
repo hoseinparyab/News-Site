@@ -2,8 +2,8 @@
 
 namespace PYB\Panel\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use PYB\Panel\Models\Panel;
+use PYB\Share\Http\Controllers\Controller;
 
 class PanelController extends Controller
 {

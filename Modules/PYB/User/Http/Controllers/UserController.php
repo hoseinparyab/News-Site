@@ -2,8 +2,8 @@
 
 namespace PYB\User\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use PYB\Role\Repositories\RoleRepo;
+use PYB\Share\Http\Controllers\Controller;
 use PYB\User\Http\Requests\AddRoleRequest;
 use PYB\User\Http\Requests\UserRequest;
 use PYB\User\Http\Requests\UserUpdateRequest;

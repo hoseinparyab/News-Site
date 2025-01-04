@@ -2,9 +2,9 @@
 
 namespace PYB\Category\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Category\Repositories\CategoryRepo;
+use PYB\Share\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {

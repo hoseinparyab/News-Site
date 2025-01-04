@@ -2,9 +2,9 @@
 
 namespace PYB\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use PYB\Auth\Http\Requests\LoginRequest;
+use PYB\Share\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {

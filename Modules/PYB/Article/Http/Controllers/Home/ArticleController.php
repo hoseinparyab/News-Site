@@ -2,12 +2,12 @@
 
 namespace PYB\Article\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Comment\Repositories\CommentRepo;
 use PYB\Home\Repositories\HomeRepo;
+use PYB\Share\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {

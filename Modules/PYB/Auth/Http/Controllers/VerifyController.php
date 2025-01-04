@@ -2,9 +2,9 @@
 
 namespace PYB\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use PYB\Share\Http\Controllers\Controller;
 
 class VerifyController extends Controller
 {

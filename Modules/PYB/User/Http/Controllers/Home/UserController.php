@@ -2,9 +2,9 @@
 
 namespace PYB\User\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Role\Models\Permission;
+use PYB\Share\Http\Controllers\Controller;
 use PYB\Share\Repositories\ShareRepo;
 use PYB\Share\Services\ShareService;
 use PYB\User\Http\Requests\UpdateProfileRequest;

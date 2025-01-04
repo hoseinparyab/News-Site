@@ -2,10 +2,10 @@
 
 namespace PYB\Home\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
 use PYB\Home\Repositories\HomeRepo;
+use PYB\Share\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

@@ -2,12 +2,12 @@
 
 namespace PYB\Article\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use PYB\Article\Http\Requests\ArticleRequest;
 use PYB\Article\Models\Article;
 use PYB\Article\Repositories\ArticleRepo;
 use PYB\Article\Services\ArticleService;
 use PYB\Category\Repositories\CategoryRepo;
+use PYB\Share\Http\Controllers\Controller;
 use PYB\Share\Repositories\ShareRepo;
 use PYB\Share\Services\ShareService;
 
