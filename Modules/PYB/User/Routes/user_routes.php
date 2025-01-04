@@ -24,4 +24,20 @@ Route::group(['namespace' => 'Home'], static function ($router) {
         //set email address
 
     });
+    $router->get('send/notifications', static function () {
+        Notification::send(auth()->user(), new PYB\User\Notifications\SendEmailToUserNotification);
+
+        return 'notif';
+    });
+    $router->get('mark/notifications', static function () {
+        auth()->user()->unreadNotifications->markAsRead();
+
+        \PYB\Share\Repositories\ShareRepo::successMessage(title: 'پیام ها با موفقیت خوانده شد');
+        return back();
+    })->name('mark.notifications');
+    $router->get('fire/event', static function () {
+        event(new PYB\User\Events\SendEmailToUserEvent('milwad@gmail.com'));
+
+        return 'event fired';
+    });
 });

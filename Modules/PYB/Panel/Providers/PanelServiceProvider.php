@@ -5,6 +5,7 @@ namespace PYB\Panel\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 use Mlk\Panel\Policies\PanelPolicy;
 use PYB\Panel\Models\Panel;
 
@@ -28,6 +29,11 @@ class PanelServiceProvider extends ServiceProvider
                 'title' => 'پنل کاربری',
                 'icon'  => 'view-dashboard',
             ]);
+        });
+
+        view()->composer(['Panel::section.navbar'], static function ($view) {
+            $notifications = auth()->user()->unreadNotifications;
+            $view->with(['notifications' => $notifications]);
         });
     }
 }

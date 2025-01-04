@@ -2,7 +2,7 @@
     <ul class="list-unstyled topnav-menu float-right mb-0">
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
-                aria-haspopup="false" aria-expanded="false">
+               aria-haspopup="false" aria-expanded="false">
                 <i class="fe-bell noti-icon"></i>
                 @if (! is_null($notifications))
                     <span class="badge badge-danger rounded-circle noti-icon-badge">{{ $notifications->count() }}</span>
@@ -40,7 +40,7 @@
         </li>
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
-                aria-haspopup="false" aria-expanded="false">
+               aria-haspopup="false" aria-expanded="false">
                 <img src="{{ asset('admin/images/users/user-1.jpg') }}" alt="تصویر کاربر" class="rounded-circle">
                 <span class="pro-user-name ml-1">
                     {{ auth()->user()->name }} <i class="mdi mdi-chevron-down"></i>
@@ -59,7 +59,7 @@
                     <span>قفل کردن صفحه</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('auth.logout') }}" class="dropdown-item notify-item">
+                <a href="{{ route('logout') }}" class="dropdown-item notify-item">
                     <i class="fe-log-out"></i>
                     <span>خروج</span>
                 </a>

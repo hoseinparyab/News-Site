@@ -9,7 +9,7 @@
             <p class="text-muted">مدیر</p>
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a href="{{ route('auth.logout') }}" class="text-custom">
+                    <a href="{{ route('logout') }}" class="text-custom">
                         <i class="mdi mdi-power"></i>
                     </a>
                 </li>
