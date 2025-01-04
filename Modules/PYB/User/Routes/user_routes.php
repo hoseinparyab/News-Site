@@ -16,4 +16,12 @@ Route::group(['namespace' => 'Home'], static function ($router) {
     $router->get('authors/{name}', 'UserController@author')->name('users.author');
     $router->get('profile', 'UserController@profile')->name('users.profile')->middleware('auth');
     $router->patch('profile', 'UserController@updateProfile')->name('users.update.profile')->middleware('auth');
+
+
+    $router ->get('send/email',function (){
+
+        dispatch( new \PYB\User\Jobs\SendEmailToUserJob('hoseinparyab1@gmail.com'));
+        //set email address
+
+    });
 });
