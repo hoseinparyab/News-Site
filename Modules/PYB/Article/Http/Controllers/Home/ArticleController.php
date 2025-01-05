@@ -40,7 +40,7 @@ class ArticleController extends Controller
         $relatedArticles = $this->repo->relatedArticles($article->category_id, $article->id)->limit(3)->get();
         $latestComments = $commentRepo->getLatestComments()->limit(3)->get();
         $adv = $advertisingRepo->getAdvByLocation(Advertising::LOCATION_DETAIL_ARTICLES)->latest()->first();
-
+        views($article)->unique()->record();
         return view('Article::Home.details', compact([
             'article', 'relatedArticles', 'homeRepo', 'latestComments', 'adv'
         ]));
