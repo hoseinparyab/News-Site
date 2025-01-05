@@ -36,7 +36,7 @@ Route::group(['namespace' => 'Home'], static function ($router) {
         return back();
     })->name('mark.notifications');
     $router->get('fire/event', static function () {
-        event(new PYB\User\Events\SendEmailToUserEvent('milwad@gmail.com'));
+        event(new PYB\User\Events\SendEmailToUserEvent('hoseinparyab1@gmail.com'));
 
         return 'event fired';
     });

@@ -12,6 +12,13 @@ class HomeRepo
     public function vip_posts()
     {
         return Article::query()->where('status', Article::STATUS_ACTIVE)->whereType(Article::TYPE_VIP)->latest();
+
+//        return Cache::remember('vip_posts', 2, function () {
+//            return Article::query()
+//                ->where('status', Article::STATUS_ACTIVE)
+//                ->whereType(Article::TYPE_VIP)
+//                ->latest();
+//        });
     }
 
     public function getActiveCategories()

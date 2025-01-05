@@ -5,7 +5,6 @@ namespace PYB\Panel\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\View;
 use Mlk\Panel\Policies\PanelPolicy;
 use PYB\Panel\Models\Panel;
 
