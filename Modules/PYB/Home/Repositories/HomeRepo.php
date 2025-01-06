@@ -47,4 +47,19 @@ class HomeRepo
     {
         return Article::query()->whereStatus(Article::STATUS_ACTIVE)->whereType(Article::TYPE_NORMAL)->latest()->limit(8)->get();
     }
+
+    /**
+     * Get the latest articles with select title columns.
+     *
+     * @return Article[]
+     */
+    public function getChapchinArticles()
+    {
+        return Article::query()
+            ->select('title', 'slug')
+            ->where('status', Article::STATUS_ACTIVE)
+            ->latest()
+            ->limit(5)
+            ->get();
+    }
 }

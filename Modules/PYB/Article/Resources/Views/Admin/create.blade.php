@@ -89,7 +89,7 @@
                                         <label class="col-sm-2 col-form-label" for="type">نوع مقاله</label>
                                         <div class="col-sm-10">
                                             <select class="form-control @error('type') is-invalid @enderror" name="type">
-                                                @foreach ( PYB\Article\Models\Article::$types as $type)
+                                                @foreach (PYB\Article\Models\Article::$types as $type)
                                                     <option value="{{ $type }}">@lang($type)</option>
                                                 @endforeach
                                             </select>
@@ -132,9 +132,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="body">توضیحات اصلی</label>
                                         <div class="col-sm-10">
-                                            <textarea rows="3" class="form-control @error('body') is-invalid @enderror"
-                                                      id="body" name="body"
-                                                      placeholder="توضیحات اصلی مقاله را وارد کنید">{{ old('body') }}</textarea>
+                                            <textarea rows="3"
+                                                      class="form-control ckeditor @error('body') is-invalid @enderror"
+                                                      id="body"
+                                                      name="body"
+                                                      placeholder="توضیحات اصلی مقاله را وارد کنید"
+                                            >{{ old('body') }}</textarea>
                                             @error('body')
                                             <br>
                                             <div class="alert alert-danger">{{ $message }}</div>
@@ -185,3 +188,17 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script src="//cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // مقداردهی CKEditor
+            CKEDITOR.replace('ckeditor', {
+                language: 'fa', // تنظیم زبان فارسی
+                contentsLangDirection: 'rtl', // راست‌چین کردن محتوا
+            });
+        });
+    </script>
+@endsection
+
