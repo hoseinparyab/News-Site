@@ -2,13 +2,11 @@
 
 namespace PYB\Home\Http\Controllers;
 
-use http\Env\Request;
 use Illuminate\Support\Facades\Cache;
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
 use PYB\Home\Repositories\HomeRepo;
 use PYB\Share\Http\Controllers\Controller;
-use PYB\Share\Repositories\ShareRepo;
 
 class HomeController extends Controller
 {

@@ -2,7 +2,7 @@
 
 namespace PYB\Article\Http\Controllers\Admin;
 
-use http\Env\Request;
+use PYB\Article\Enums\TypeTextArticleEnum;
 use PYB\Article\Http\Requests\ArticleRequest;
 use PYB\Article\Models\Article;
 use PYB\Article\Repositories\ArticleRepo;
@@ -46,10 +46,21 @@ class ArticleController extends Controller
         $this->authorize('manage', $this->class);
 
         [$imageName, $imagePath] = ShareService::uploadImage($request->file('image'), 'articles');
+        if ($request->type_text === TypeTextArticleEnum::TYPE_TEXT_VIDEO->value) {
+            [$videoName, $videoPath] = ShareService::uploadVideo($request->file('video'), 'articles');
+        } else {
+            [$videoName, $videoPath] = null;
+        }
 
-        $this->service->store($request, auth()->id(), $imageName, $imagePath);
+        $this->service->store(
+            $request,
+            auth()->id(),
+            $imageName,
+            $imagePath,
+            $videoName,
+            $videoPath
+        );
 
-        //        alert()->success(, 'عملیات با موفقیت انجام شد');
         ShareRepo::successMessage('ساخت مقاله');
         return to_route('articles.index');
     }
@@ -103,14 +114,13 @@ class ArticleController extends Controller
     private function uploadImage($file, $article): array
     {
         if (!is_null($file)) {
-            [$imageName, $imagePath] = $this->service->uploadImage($file);
-        } else {
+            [$imageName, $imagePath] = ShareService::uploadImage($file, 'articles');
+        }
+        else {
             $imageName = $article->imageName;
             $imagePath = $article->imagePath;
         }
 
         return array($imageName, $imagePath);
     }
-
 }
-

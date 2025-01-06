@@ -5,13 +5,20 @@
          colors="true"
 >
     <testsuites>
+    <!--  Unit Tests -->
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
+        <!--  Feature Tests      -->
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
+
+    <!--  Feature Tests      -->
+    <testsuite name="Feature">
+        <directory suffix="Test.php">./Modules/PYB/Category/Tests/Feature</directory>
+    </testsuite>
     <coverage>
         <include>
             <directory suffix=".php">./app</directory>

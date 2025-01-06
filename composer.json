@@ -47,7 +47,11 @@
             "PYB\\Share\\": "Modules/PYB/Share/",
             "PYB\\Advertising\\": "Modules/PYB/Advertising/"
 
-        }
+        },
+        "files":
+            [
+                "Modules/PYB/Share/helpers.php"
+            ]
     },
     "autoload-dev": {
         "psr-4": {

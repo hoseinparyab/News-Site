@@ -7,13 +7,14 @@ use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Overtrue\LaravelLike\Traits\Likeable;
+use PYB\Article\Enums\TypeTextArticleEnum;
 use PYB\Category\Models\Category;
 use PYB\Comment\Trait\HaveComments;
 use PYB\User\Models\User;
 
 class Article extends Model implements Viewable
 {
-    use HasFactory, InteractsWithViews, Likeable , HaveComments;
+    use HasFactory, InteractsWithViews, Likeable, HaveComments;
 
     protected $fillable = [
         'user_id',
@@ -29,6 +30,9 @@ class Article extends Model implements Viewable
         'body',
         'keywords',
         'description',
+        'type_text',
+        'videoName',
+        'videoPath',
     ];
 
     public const STATUS_ACTIVE = 'active';
@@ -61,9 +65,15 @@ class Article extends Model implements Viewable
         else if ($this->status === self::STATUS_INACTIVE) return 'danger';
         else return 'warning';
     }
+
     public function path()
     {
         return route('articles.details', $this->slug);
+    }
+
+    public function isVideoArticle(): bool
+    {
+        return $this->type_text === TypeTextArticleEnum::TYPE_TEXT_VIDEO->value && ! is_null($this->videoName);
     }
     //  public function getCommentCount()  //FIXED: 1- change the method name to getCommentsCount
     // {

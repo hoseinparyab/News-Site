@@ -21,12 +21,21 @@
                                 <img class="border-radius-15" src="{{ $article->imagePath }}" alt="{{ $article->title }}">
                             </a>
                         </div>
-{{--                        {{ \Illuminate\Support\Str::limit($article->title, 25) }}--}}
+                        {{--                        {{ \Illuminate\Support\Str::limit($article->title, 25) }}--}}
                         <div class="post-content media-body">
                             <div class="entry-meta mb-15 mt-10">
                                 <a class="entry-meta meta-2" href="category.html">
                                     <span class="post-in text-danger font-x-small">{{ $article->category->title }}</span>
                                 </a>
+                                @if ($article->isVideoArticle())
+                                    <a class="entry-meta meta-2" href="#">
+                                        <span class="post-in text-info font-x-small">  ویدیویی ✅</span>
+                                    </a>
+                                @else
+                                    <a class="entry-meta meta-2" href="#">
+                                        <span class="post-in text-info font-x-small">  متنی ✅</span>
+                                    </a>
+                                @endif
                             </div>
                             <h5 class="post-title mb-15 text-limit-2-row">
                                 <a href="{{ $article->path() }}">{{ $article->title }}</a>
@@ -43,7 +52,7 @@
         </div>
     </div>
     <div class="pagination-area mb-30">
-{{--        {{ $news_posts->links() }}--}}
+        {{--        {{ $news_posts->links() }}--}}
     </div>
     @include('Home::parts.advs_bottom')
 </div>

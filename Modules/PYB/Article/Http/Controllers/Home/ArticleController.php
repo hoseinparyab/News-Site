@@ -4,7 +4,6 @@ namespace PYB\Article\Http\Controllers\Home;
 
 
 use Illuminate\Http\Request;
-
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
 use PYB\Article\Repositories\ArticleRepo;

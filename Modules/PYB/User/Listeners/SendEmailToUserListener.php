@@ -2,7 +2,6 @@
 
 namespace PYB\User\Listeners;
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use PYB\User\Mail\SendEmailToUserMail;
 
