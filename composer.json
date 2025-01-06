@@ -19,6 +19,7 @@
         "opcodesio/log-viewer": "^3.12",
         "overtrue/laravel-like": "^5.3",
         "realrashid/sweet-alert": "^7.2",
+        "spatie/laravel-feed": "^4.4",
         "spatie/laravel-permission": "^6.10"
     },
     "require-dev": {

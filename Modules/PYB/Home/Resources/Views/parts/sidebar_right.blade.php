@@ -31,6 +31,10 @@
                 </div>
             </div>
         </div>
+            {{--  RSS VIEWS     --}}
+            {{--        <p>--}}
+            {{--            {{cache()->get('feed_title')}}--}}
+            {{--        </p>--}}
     </div>
     <div class="sidebar-widget widget_categories border-radius-10 bg-white mb-30">
         <div class="widget-header position-relative mb-15">
@@ -46,7 +50,7 @@
     </div>
     <div class="sidebar-widget widget_categories border-radius-10 bg-white mb-30">
         <div class="widget-header position-relative mb-15">
-            <h5 class="widget-title"><strong>چپ چین  </strong></h5>
+            <h5 class="widget-title"><strong>چپ چین </strong></h5>
         </div>
         <ul class="font-small text-muted">
             @foreach ($homeRepo->getChapchinArticles() as $article)
