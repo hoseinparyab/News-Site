@@ -62,4 +62,13 @@ class HomeRepo
             ->limit(5)
             ->get();
     }
+
+    public function searchArticle(string $search)
+    {
+        return Article::query()
+            ->where('title', 'LIKE', "%$search%")
+            ->where('body', 'LIKE', "%$search%")
+            ->get();
+    }
+
 }

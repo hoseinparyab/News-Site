@@ -2,9 +2,12 @@
 
 namespace PYB\Home\Http\Controllers;
 
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Repositories\AdvertisingRepo;
+use PYB\Article\Repositories\ArticleRepo;
 use PYB\Home\Repositories\HomeRepo;
 use PYB\Share\Http\Controllers\Controller;
 
@@ -24,6 +27,11 @@ class HomeController extends Controller
         return view('Home::index', compact(['homeRepo', 'adv_top', 'adv_bottom']));
     }
 
-
+    public function search(Request $request)
+    {
+        $title = $request->title;
+        $articles = resolve(HomeRepo::class)->searchArticle($title);
+        return view('Home::search', compact(['title', 'articles']));
+    }
 
 }
