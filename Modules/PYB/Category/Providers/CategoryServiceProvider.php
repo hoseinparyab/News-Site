@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use PYB\Category\Models\Category;
 use PYB\Category\Policies\CategoryPolicy;
+use PYB\Role\Models\Permission;
 
 class CategoryServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,9 @@ class CategoryServiceProvider extends ServiceProvider
             'url'   => route('categories.index'),
             'title' => 'دسته بندی ها',
             'icon'  => 'folder-open-outline',
+            'permissions' => [
+                Permission::PERMISSION_CATEGORIES
+            ]
         ]);
     }
 }

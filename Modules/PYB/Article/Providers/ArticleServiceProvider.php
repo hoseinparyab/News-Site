@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use PYB\Article\Models\Article;
 use PYB\Article\Policies\ArticlePolicy;
+use PYB\Role\Models\Permission;
 
 class ArticleServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,9 @@ class ArticleServiceProvider extends ServiceProvider
             'url'   => route('articles.index'),
             'title' => 'مقالات',
             'icon'  => 'book',
+            'permissions' => [
+                Permission::PERMISSION_ARTICLES
+            ]
         ]);
     }
 }

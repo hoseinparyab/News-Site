@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Mlk\Comment\Policies\CommentPolicy;
 use PYB\Comment\Models\Comment;
+use PYB\Role\Models\Permission;
 
 class CommentServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,9 @@ class CommentServiceProvider extends ServiceProvider
             'url'   => route('comments.index'),
             'title' => 'نظرات',
             'icon'  => 'comment',
+            'permissions' => [
+                Permission::PERMISSION_COMMENTS
+            ]
         ]);
     }
 }

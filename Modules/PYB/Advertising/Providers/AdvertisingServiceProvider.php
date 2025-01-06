@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use PYB\Advertising\Models\Advertising;
 use PYB\Advertising\Policies\AdvertisingPolicy;
+use PYB\Role\Models\Permission;
 
 class AdvertisingServiceProvider extends ServiceProvider
 {
@@ -19,16 +20,19 @@ class AdvertisingServiceProvider extends ServiceProvider
         $this->loadJsonTranslationsFrom(__DIR__ . '/../Resources/Lang/');
 
         Route::middleware('web')->namespace($this->namespace)
-        ->group(__DIR__ . '/../Routes/advertising_routes.php');
+            ->group(__DIR__ . '/../Routes/advertising_routes.php');
         Gate::policy(Advertising::class, AdvertisingPolicy::class);
     }
 
     public function boot()
     {
         config()->set('panelConfig.menus.advertisings', [
-            'url'   => route('advertisings.index'),
+            'url' => route('advertisings.index'),
             'title' => 'تبلیغات',
-            'icon'  => 'file',
+            'icon' => 'file',
+            'permissions' => [
+                Permission::PERMISSION_ADVERTISINGS
+            ]
         ]);
     }
 }

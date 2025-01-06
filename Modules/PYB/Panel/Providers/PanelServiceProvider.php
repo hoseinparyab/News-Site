@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Mlk\Panel\Policies\PanelPolicy;
 use PYB\Panel\Models\Panel;
+use PYB\Role\Models\Permission;
 
 class PanelServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class PanelServiceProvider extends ServiceProvider
                 'url'   => route('panel.index'),
                 'title' => 'پنل کاربری',
                 'icon'  => 'view-dashboard',
+
             ]);
         });
 
