@@ -48,9 +48,6 @@ class ResetController extends Controller
             }
         );
 
-        dd($reset);
-        return $reset === Password::PASSWORD_RESET ?
-            to_route('login')->with(['success_reset_password' => 'رمز عبور شما با موفقیت تغییر کرد.']) :
-            back()->withErrors(['error' => 'مشکلی در سیستم به وجود امده لطفا بعدا تلاش کنید.']);
+           return to_route('login')->with(['success_reset_password' => 'رمز عبور شما با موفقیت تغییر کرد.']);
     }
 }
